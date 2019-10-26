@@ -11,7 +11,7 @@
             </tr>
             </thead>
             <tbody>
-            {% for user in users %}
+            {% for user in users.items %}
             <tr>
                 <td>{{ loop.index + pagination.skip }}</td>
                 <td><a href="{{ url_for('details', user_id=user.id) }}">{{ user.email }}</a></td>

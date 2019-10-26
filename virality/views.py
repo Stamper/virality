@@ -15,8 +15,8 @@ from .exceptions import IntegrityErrorException
 @app.route('/', methods=['GET'])
 def index():
     page = request.args.get(get_page_parameter(), type=int, default=1)
-    users = User.query.all()
-    pagination = Pagination(page=page, total=User.query.count(), search=False, record_name='users')
+    users = User.query.paginate(page, per_page=10)
+    pagination = Pagination(page=page, total=User.query.count(), search=False, record_name='users', css_framework='bootstrap4')
 
     return render_template('index.html', users=users, pagination=pagination)
 
