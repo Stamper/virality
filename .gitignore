@@ -1,0 +1,7 @@
+__pycache__
+.env/
+.idea/
+.git/
+db.sqlite3
+images/*
+!images/.gitkeep

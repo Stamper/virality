@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block container %}
+<div class="row ">
+    <main class="col-12">
+        <table class="table m-3">
+            <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ loop.index + pagination.skip }}</td>
+                <td><a href="{{ url_for('details', user_id=user.id) }}">{{ user.email }}</a></td>
+                <td>{{ user.description|truncate(50, True) }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {{ pagination.links }}
+    </main>
+</div>
+{% endblock %}

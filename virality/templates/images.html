@@ -1,0 +1,7 @@
+{% for image in images %}
+<div class="row">
+    <div class="col-12">
+        <img src="{{ config.IMAGES_HOST}}/{{ image.file_name }}" class="img-fluid m-3">
+    </div>
+</div>
+{% endfor %}
