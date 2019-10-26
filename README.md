@@ -3,10 +3,7 @@
 `$ pip install -r requirements.txt`
 
 ### Project bootstrap
-```
-$ python manage.py db migrate
-$ python manage.py db upgrade
-```
+`$ python manage.py db upgrade`
 
 ### Run server
 `$ python manager.py`
